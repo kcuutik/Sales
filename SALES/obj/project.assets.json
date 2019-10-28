@@ -12691,19 +12691,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\khoai\\.nuget\\packages\\": {}
+    "C:\\Users\\dev\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\khoai\\OneDrive\\Máy tính\\SALES\\SALES\\SALES.csproj",
+      "projectUniqueName": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj",
       "projectName": "SALES",
-      "projectPath": "C:\\Users\\khoai\\OneDrive\\Máy tính\\SALES\\SALES\\SALES.csproj",
-      "packagesPath": "C:\\Users\\khoai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\khoai\\OneDrive\\Máy tính\\SALES\\SALES\\obj\\",
+      "projectPath": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj",
+      "packagesPath": "C:\\Users\\dev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\khoai\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dev\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -12743,7 +12747,6 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
-            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -12762,16 +12765,10 @@
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }
