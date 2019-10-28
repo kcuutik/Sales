@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header card-header-primary">
+                <h4 class="card-title">Sản phẩm</h4>
+                <p class="card-category">Quản trị sản phẩm</p>
+            </div>
+            <div class="card-body">
+                <div style="padding: 10px"></div>
+                <div id="typography">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button type="button" class="btn btn-primary btn-sm pull-right" id="btnAddtProduct">Thêm sản phẩm</button>
+                            <button type="button" class="btn btn-primary btn-sm pull-right" id="btnListProduct">Danh sách sản phẩm</button>
+                        </div>
+                        <div class="col-md-12">
+                            <hr />
+                        </div>
+                        <div class="col-md-12" id="listProduct"></div>
+                        <div id="divForm" style="padding: 20px"> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/admin/js/app/admin-product.js"></script>
+

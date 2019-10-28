@@ -1,0 +1,27 @@
+﻿@model SALES.Entities.Image
+
+<div class="row">
+    <div>
+        <input type="hidden" value="@Model.Id" id="txtId" />
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Tên hình sản phẩm</label>
+            <input type="text" class="form-control" id="txtName">
+        </div>
+    </div>
+    <div class="col-md-6 text-center" style="padding-top: 15px;">
+        <input type="file" id="FileUpload1" multiple class="form-file-upload" />
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="bmd-label-floating">Chọn sản phẩm</label>
+            @Html.DropDownListFor(m => m.ProductId, new SelectList(ViewBag.Product, "Value", "Text"), "-- Chọn --", new { @class = "form-control", @id = "ddlProductId" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <button name="btnSave" class="btn btn-primary pull-right">Lưu thông tin</button>
+        <button name="btnCancel" class="btn btn-warning pull-right">Hủy thao tác</button>
+    </div>
+</div>
+

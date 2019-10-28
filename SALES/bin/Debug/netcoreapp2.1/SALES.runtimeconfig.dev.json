@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\khoai\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\khoai\\.nuget\\packages"
+    ]
+  }
+}

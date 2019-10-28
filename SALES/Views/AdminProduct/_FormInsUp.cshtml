@@ -1,0 +1,95 @@
+﻿@model SALES.Entities.Product
+
+
+
+<div class="row">
+    <div>
+        <input type="hidden" value="@Model.Id" id="txtId" />
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Tên sản phẩm</label>
+            @Html.TextBoxFor(m => Model.Name, new { @class = "form-control", @id = "txtName" })
+        </div>
+    </div>
+    <div class="col-md-6">
+
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Loại sản phẩm</label>
+            @Html.DropDownListFor(m => m.CategoryId, new SelectList(ViewBag.Category, "Value", "Text"), "-- Chọn --", new { @class = "form-control", @id = "ddlCategory" })
+            @*@Html.TextBoxFor(m => Model.Category.Name, new { @class = "form-control", @id = "txtTitle" })*@
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Tiêu đề</label>
+            @Html.TextBoxFor(m => Model.Title, new { @class = "form-control", @id = "txtTitle" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Giá mua</label>
+            @Html.TextBoxFor(m => Model.PriceIn, new { @class = "form-control", @id = "txtPriceIn" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Giá bán</label>
+            @Html.TextBoxFor(m => Model.PriceOut, new { @class = "form-control", @id = "txtPriceOut" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Số lượng nhập kho</label>
+            @Html.TextBoxFor(m => Model.QuantilyIn, new { @class = "form-control", @id = "txtQuantilyIn" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Số lượng đã bán</label>
+            @Html.TextBoxFor(m => Model.QuantilyOut, new { @class = "form-control", @id = "txtQuantilyOut" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Giảm giá</label>
+            @Html.TextBoxFor(m => Model.Discount, new { @class = "form-control", @id = "txtDiscount" })
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label class="bmd-label-floating">Contentt</label>
+            @Html.TextBoxFor(m => Model.Contentt, new { @class = "form-control", @id = "txtContentt" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="bmd-label-floating">Keyword</label>
+            @Html.TextBoxFor(m => Model.Keywords, new { @class = "form-control", @id = "txtKeywords" })
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="form-group">
+            <label class="bmd-label-floating">Mô tả sản phẩm</label>
+        </div>
+        <textarea id="txtDesciption"></textarea>
+    </div>
+    <div class="col-md-12">
+        <hr />
+    </div>
+    <div class="col-md-12">
+        <button name="btnSave" class="btn btn-primary pull-right">Lưu thông tin</button>
+        <button name="btnCancel" class="btn btn-warning pull-right">Hủy thao tác</button>
+    </div>
+</div>
+
+<script src="~/lib/js/jquery-3.4.1.js"></script>
+<script src="~/lib/js/jquery-3.4.1.min.js"></script>
+<script src="~/js/tinymce.min.js"></script>
+<script src="~/js/init-tinymce.js"></script>
+
+<script>
+    tinymce.init({ selector: 'textarea' });
+</script>

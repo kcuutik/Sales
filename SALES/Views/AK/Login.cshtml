@@ -1,0 +1,40 @@
+﻿@model SALES.Entities.AkUser
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+<link href="~/admin/css/login.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+@{
+    using (Html.BeginForm("Login", "AK", FormMethod.Post))
+    {
+        <div class="wrapper fadeInDown">
+            <div id="formContent">
+                <!-- Tabs Titles -->
+                <!-- Icon -->
+                <div class="fadeIn first" style="padding-top: 20px; font-weight:bold; color:#ffd800">
+                    <h3>MR TIK STORE</h3>
+                </div>
+             
+                <!-- Login Form -->
+                <form>
+
+                    @Html.TextBoxFor(m => m.UserName, new { @class = "fadeIn second", @placeholder = "User name" })
+                    @Html.TextBoxFor(m => m.Password, new { @class = "fadeIn second", @placeholder = "Password",  Type="password" })
+                    <div style="padding: 10px; color:red">@ViewBag.Messages</div>
+                    <input type="submit" class="fadeIn fourth" value="Log In">
+                </form>
+
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="#">Forgot Password?</a>
+                </div>
+
+            </div>
+        </div>
+
+    }
+}

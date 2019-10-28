@@ -1,0 +1,32 @@
+﻿@model IEnumerable<SALES.Entities.Image>
+
+<div class="table-responsive table-hover table-bordered">
+    <table class="table">
+        <tr class=" text-primary">
+            <th class="text-center">STT</th>
+            <th>Tên sản phẩm</th>
+            <th class="text-center">Hình sản phẩm</th>
+            <th style="width: 25%"></th>
+        </tr>
+        <tbody>
+            @{
+                int index = 1;
+                foreach (var item in Model)
+                {
+                        <tr>
+                            <td class="text-center">
+                                @(index++)
+                            </td>
+                            <td>@item.Product.Name</td>
+                            <td class="text-center">
+                                <img src="@item.Url" alt="Hình sản phẩm" />
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger  btn-sm pull-right" id="btnDelete" data-delete-img-id="@item.Id">Delete</button>
+                            </td>
+                        </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
