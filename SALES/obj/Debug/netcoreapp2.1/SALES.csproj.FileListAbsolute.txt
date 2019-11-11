@@ -125,7 +125,6 @@ D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminImge
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminOrder\Add.g.cshtml.cs
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminOrder\Index.g.cshtml.cs
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminProduct\Index.g.cshtml.cs
-D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminProduct\List.g.cshtml.cs
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminProduct\_FormInsUp.g.cshtml.cs
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminProduct\_List.g.cshtml.cs
 D:\KHOA\Other\SRC\SALE\Sales\SALES\obj\Debug\netcoreapp2.1\Razor\Views\AdminUser\Index.g.cshtml.cs
