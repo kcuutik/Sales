@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj": {}
+    "D:\\KHOA\\Other\\SRC\\SALE\\Sales\\SALES\\SALES.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj": {
+    "D:\\KHOA\\Other\\SRC\\SALE\\Sales\\SALES\\SALES.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj",
+        "projectUniqueName": "D:\\KHOA\\Other\\SRC\\SALE\\Sales\\SALES\\SALES.csproj",
         "projectName": "SALES",
-        "projectPath": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\SALES.csproj",
+        "projectPath": "D:\\KHOA\\Other\\SRC\\SALE\\Sales\\SALES\\SALES.csproj",
         "packagesPath": "C:\\Users\\dev\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dev\\Desktop\\SALES\\Sales\\SALES\\obj\\",
+        "outputPath": "D:\\KHOA\\Other\\SRC\\SALE\\Sales\\SALES\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -64,6 +64,10 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[2.1.10, )"
+            },
+            "PagedList.Mvc": {
+              "target": "Package",
+              "version": "[4.5.0, )"
             },
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",

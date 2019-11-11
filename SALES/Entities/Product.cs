@@ -16,6 +16,7 @@ namespace SALES.Entities
         public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
+        public string Url { get; set; }
         [JsonProperty("categoryId")]
         public int CategoryId { get; set; }
         [JsonProperty("priceIn")]

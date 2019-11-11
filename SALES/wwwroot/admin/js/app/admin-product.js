@@ -86,7 +86,6 @@ $(document).on('click', '[name=btnSave]', function () {
 });
 
 $(document).on('click', '#btnEdit', function () {
-    debugger;
     $('#listProduct').hide();
     $('#divForm').show(); 
     var id = $(this).data('edit-product-id');
@@ -103,3 +102,40 @@ $(document).on('click', '#btnEdit', function () {
     });
 });
 
+$(document).on('click', '[name="btnAddImges"]', function () {
+    var id = $(this).data('add-product-id');
+    debugger;
+    $("#AddImagesModal").modal();
+    $("#hidProductId").val(id);
+
+});
+
+$(document).on('click', '#btnSaveImge', function () {
+    if (window.FormData !== undefined) {
+        var fileUpload = $("#FileUpload1").get(0);
+        var files = fileUpload.files;
+        var fileData = new FormData();
+        for (var i = 0; i < files.length; i++) {
+            fileData.append(files[i].name, files[i]);
+        }
+        var productId = $('#hidProductId').val();
+        fileData.append('productId', productId);
+
+        $.ajax({
+            url: '/AdminImge/UploadProductFiles',
+            type: "POST",
+            contentType: false, // Not to set any content header
+            processData: false, // Not to process data
+            data: fileData,
+            success: function (result) {
+                GetAll();
+                $('#listImage').show();
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    } else {
+        alert("FormData is not supported.");
+    }
+});

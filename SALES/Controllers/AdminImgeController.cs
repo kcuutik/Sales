@@ -91,5 +91,34 @@ namespace SALES.Controllers
             }
             return "khoa nè";
         }
+
+        [HttpPost]
+        public string UploadProductFiles()
+        {
+            var file = Request.Form.Files;
+            string ProductId = Request.Form["productId"].ToString();
+
+            if (file.Count > 0)
+            {
+                foreach (var f in file)
+                {
+                    var folderName = Path.Combine("wwwroot", "admin/img/product");
+                    var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+
+                    var fileName = ContentDispositionHeaderValue.Parse(f.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        f.CopyTo(stream);
+                    }
+
+                    _productServices.UpdateImages(Convert.ToInt32(ProductId), "~/" + ProductId + ".jpg");
+                }
+            }
+            return "khoa nè";
+        }
+        
     }
 }

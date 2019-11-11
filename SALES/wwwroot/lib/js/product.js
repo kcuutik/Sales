@@ -17,7 +17,7 @@ $(document).ready(function () {
         type: "GET",
         url: "/san-pham/getById",
         dataType: "html",
-        data: {id: id}
+        data: {id: id},
         success: function (response) {
             $('#lstProduct').html(response);
         },

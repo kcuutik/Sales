@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Configuration;
 using SALES.Entities;
 using SALES.Services;
+using PagedList;
 
 namespace SALES.Controllers
 {
@@ -35,7 +36,7 @@ namespace SALES.Controllers
         public async Task<IActionResult> GetAll()
         {
             var pro = await _productServices.GetAll();
-            return PartialView("_List", pro);
+            return PartialView("_List", pro.ToPagedList(1, 5));
         }
 
         [HttpPost]

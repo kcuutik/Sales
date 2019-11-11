@@ -14,6 +14,8 @@ namespace SALES.Repository
         Task<Product> GetById(int id);
         Task<Product> Insert(Product pro);
         Task<Product> Update(Product pro);
+        Task<Product> UpdateImages(int id, string url);
+        
         Task<Product> Delete(int id);
     }
     public class ProductRepository : IProductRepository
@@ -84,6 +86,17 @@ namespace SALES.Repository
             }
 
             return pro;
+        }
+
+        public async Task<Product> UpdateImages(int id,string url)
+        {
+            var check = await _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (check != null)
+            {
+                check.Url = url;
+                _dbContext.SaveChanges();
+            }
+            return check;
         }
     }
 }

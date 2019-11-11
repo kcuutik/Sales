@@ -13,6 +13,7 @@ namespace SALES.Services
         Task<Product> GetById(int id);
         Task<Product> Insert(Product pro);
         Task<Product> Update(Product pro);
+        Task<Product> UpdateImages(int id, string url);
         Task<Product> Delete(int id);
     }
     public class ProductServices : IProductServices
@@ -50,6 +51,11 @@ namespace SALES.Services
         public Task<Product> Delete(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public Task<Product> UpdateImages(int id, string url)
+        {
+            return _productRepository.UpdateImages(id, url);
         }
     }
 }

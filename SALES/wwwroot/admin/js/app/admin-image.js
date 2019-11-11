@@ -48,7 +48,6 @@ $(document).on('click', '[name=btnSave]', function () {
         var name = $('#txtName').val();
         var productId = $('#ddlProductId').val();
         fileData.append('productId', productId);
-        fileData.append('name', name);
 
         $.ajax({
             url: '/AdminImge/UploadFiles',
