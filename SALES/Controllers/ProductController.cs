@@ -28,10 +28,10 @@ namespace WEBAPP.Controllers
             return View();
         }
 
-        [HttpGet("getAll")]
-        public async Task<ActionResult> GetAll()
+        [HttpGet("getIsActive")]
+        public async Task<ActionResult> GetIsActive()
         {
-            var pro = await _productServices.GetAll();
+            var pro = await _productServices.GetIsActive();
             return PartialView("_List", pro);
         }
 

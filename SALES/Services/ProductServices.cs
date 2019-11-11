@@ -10,10 +10,10 @@ namespace SALES.Services
     public interface IProductServices
     {
         Task<List<Product>> GetAll();
+        Task<List<Product>> GetIsActive();
         Task<Product> GetById(int id);
         Task<Product> Insert(Product pro);
         Task<Product> Update(Product pro);
-        Task<Product> UpdateImages(int id, string url);
         Task<Product> Delete(int id);
     }
     public class ProductServices : IProductServices
@@ -53,9 +53,9 @@ namespace SALES.Services
             throw new NotImplementedException();
         }
 
-        public Task<Product> UpdateImages(int id, string url)
+        public Task<List<Product>> GetIsActive()
         {
-            return _productRepository.UpdateImages(id, url);
+            return _productRepository.GetIsActive();
         }
     }
 }

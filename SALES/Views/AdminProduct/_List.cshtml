@@ -1,6 +1,4 @@
-﻿@using PagedList;
-@using PagedList.Mvc;
-@model IPagedList<SALES.Entities.Product>
+﻿@model IEnumerable<SALES.Entities.Product>
 
 <div class="table-responsive table-hover table-bordered">
     <table class="table">
@@ -18,37 +16,32 @@
                 int index = 1;
                 foreach (var item in Model)
                 {
-                    <tr>
-                        <td class="text-center">
-                            @(index++)
-                        </td>
-                        <td>
-                            @item.Name
-                        </td>
-                        <td>
-                            @item.PriceOut
-                        </td>
-                        <td>
-                            @item.QuantilyIn
-                        </td>
-                        <td>
-                            @item.QuantilyOut
-                        </td>
-                        <td>
-                            @item.IsActive
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-primary btn-sm pull-right" name="btnAddImges" data-add-product-id="@item.Id">Chèn hình</button>
-                            <button type="submit" class="btn btn-danger  btn-sm pull-right" id="btnDelete" data-delete-product-id="@item.Id">Delete</button>
-                            <button type="button" class="btn btn-success btn-sm pull-right" id="btnEdit" data-edit-product-id="@item.Id" data-edit-product-description="@item.Description" data-edit-product-name="@item.Name">Edit</button>
-                        </td>
-                    </tr>
+                        <tr>
+                            <td class="text-center">
+                                @(index++)
+                            </td>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.PriceOut
+                            </td>
+                            <td>
+                                @item.QuantilyIn
+                            </td>
+                            <td>
+                                @item.QuantilyOut
+                            </td>
+                            <td>
+                                @item.IsActive
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-danger  btn-sm pull-right" id="btnDelete" data-delete-product-id="@item.Id">Delete</button>
+                                <button type="button" class="btn btn-success btn-sm pull-right" id="btnEdit" data-edit-product-id="@item.Id" data-edit-product-description="@item.Description" data-edit-product-name="@item.Name">Edit</button>
+                            </td>
+                        </tr>
                 }
             }
         </tbody>
     </table>
 </div>
-
-
-
-@*@Html.PagedListPager()*@

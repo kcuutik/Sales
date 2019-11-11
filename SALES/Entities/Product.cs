@@ -16,7 +16,6 @@ namespace SALES.Entities
         public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
-        public string Url { get; set; }
         [JsonProperty("categoryId")]
         public int CategoryId { get; set; }
         [JsonProperty("priceIn")]
@@ -45,8 +44,6 @@ namespace SALES.Entities
         public int CreateUser { get; set; }
         public int UpdateUser { get; set; }
         public Category Category { get; set; }
-
-        [ForeignKey("ProductId")]
         public virtual  ICollection<Image> Images { get; set; }
 
 

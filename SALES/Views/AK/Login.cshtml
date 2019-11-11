@@ -23,7 +23,7 @@
                 <form>
 
                     @Html.TextBoxFor(m => m.UserName, new { @class = "fadeIn second", @placeholder = "User name" })
-                    @Html.TextBoxFor(m => m.Password, new { @class = "fadeIn second", @placeholder = "Password",  Type="password" })
+                    @Html.TextBoxFor(m => m.Password, new { @class = "fadeIn second", @placeholder = "Password"})
                     <div style="padding: 10px; color:red">@ViewBag.Messages</div>
                     <input type="submit" class="fadeIn fourth" value="Log In">
                 </form>
