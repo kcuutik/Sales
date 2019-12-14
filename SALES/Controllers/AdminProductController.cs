@@ -48,6 +48,20 @@ namespace SALES.Controllers
             return Json(new { isSuccess = true });
         }
 
+        [HttpPost]
+        public JsonResult Delete(int id)
+        {
+            var result = _productServices.Delete(id);
 
+            return Json(new { isSuccess = true });
+        }
+
+        [HttpPost]
+        public JsonResult GetTrend()
+        {
+            var result = _productServices.GetIsTrend();
+
+            return Json(new { isSuccess = true });
+        }
     }
 }

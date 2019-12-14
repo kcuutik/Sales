@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MR TIK STORE</title>
-    <link rel="icon" type="image/png" href="~/lib/favicon.png" />
+    <link rel="icon" type="image/png" href="~/favicon.png" />
     <link rel="stylesheet" href="~/lib/vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="~/lib/vendors/fontawesome/css/all.min.css">
     <link href="~/lib/vendors/themify-icons/themify-icons.css" rel="stylesheet" />
@@ -19,9 +19,9 @@
         <div class="main_menu">
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="container">
-                    <a class="navbar-brand logo_h" href="index.html">
+                    <a class="navbar-brand logo_h" href="/trang-chu">
                         @*<img src="~/lib/img/logo.png" alt="">*@
-                        <span style="color: #ff9400; font-size: 20px; font-weight: bold">MR TIK STORE</span> 
+                        <span style="color: #ff9400; font-size: 20px; font-weight: bold">MR TIK STORE</span>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,16 +31,11 @@
                     </button>
                     <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
                         <ul class="nav navbar-nav menu_nav ml-auto mr-auto">
-                            <li class="nav-item active"><a class="nav-link" href="~/Home/Index">Giới thiệu</a></li>
                             <li class="nav-item submenu dropdown">
-                                <a href="~/SanPham/DanhMuc" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                <a href="/trang-chu" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                                    aria-expanded="false">Sản phẩm</a>
                                 <ul class="dropdown-menu">
-                                    <li class="nav-item"><a class="nav-link" href="~/san-pham/danh-muc">Danh mục</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="single-product.html">Product Details</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="checkout.html">Product Checkout</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="confirmation.html">Confirmation</a></li>
-                                    <li class="nav-item"><a class="nav-link" href="cart.html">Shopping Cart</a></li>
+                                    <li id="lstDanhMuc"></li>
                                 </ul>
                             </li>
                             <li class="nav-item submenu dropdown">
@@ -51,13 +46,19 @@
                                     <li class="nav-item"><a class="nav-link" href="~/ThanhVien/DangKy">Đăng ký</a></li>
                                 </ul>
                             </li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Liên hệ</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/gioi-thieu">Liên hệ</a></li>
                         </ul>
-
                         <ul class="nav-shop">
-                            @*<li class="nav-item"><button><i class="ti-search"></i></button></li>*@
+                            <li class="nav-item">
+                                <div class="form-group" style="padding-top: 10px">
+                                    <input type="text" class="button-hero" id="txtSearch" placeholder="Tìm kiếm">
+                                </div>
+                            </li>
+                        </ul>
+                        <ul class="nav-shop">
+                            @*
+                                <li class="nav-item"><button><i class="ti-search"></i></button></li>*@
                             <li class="nav-item"><button><i class="ti-shopping-cart"></i><span class="nav-shop__circle">3</span></button> </li>
-                            <li class="nav-item"><a class="button button-header" href="#">Mua ngay</a></li>
                         </ul>
                     </div>
                 </div>
@@ -150,7 +151,8 @@
         <div class="footer-bottom">
             <div class="container">
                 <div class="row d-flex">
-                    <p class="col-lg-12 footer-text text-center">By MR TIK STORE (deverplerment : Kcưu Tik)
+                    <p class="col-lg-12 footer-text text-center">
+                        By MR TIK STORE (deverplerment : Kcưu Tik)
                     </p>
                 </div>
             </div>
@@ -158,6 +160,8 @@
     </footer>
     <!--================ End footer Area  =================-->
 
+    <script src="~/lib/js/jquery-3.4.1.js"></script>
+    <script src="~/lib/js/jquery-3.4.1.min.js"></script>
     <script src="~/lib/vendors/jquery/jquery-3.2.1.min.js"></script>
     <script src="~/lib/vendors/bootstrap/bootstrap.bundle.min.js"></script>
     <script src="~/lib/vendors/skrollr.min.js"></script>
@@ -166,5 +170,23 @@
     <script src="~/lib/vendors/jquery.ajaxchimp.min.js"></script>
     <script src="~/lib/vendors/mail-script.js"></script>
     <script src="~/lib/js/main.js"></script>
+
+    <script>
+        $('#txtSearch').keypress(function (event) {
+
+        });
+
+        $.ajax({
+            type: "POST",
+            url: "/Home/GetCatagory",
+            dataType: "html",
+            success: function (response) {
+                $("#lstDanhMuc").html(response);
+            },
+            error: function (xhr, textStatus, errorThrown) {
+                // TODO: Show error
+            }
+        });
+    </script>
 </body>
 </html>

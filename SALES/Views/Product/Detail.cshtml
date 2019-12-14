@@ -1,8 +1,11 @@
 ﻿
+@model SALES.Entities.Product
+
 @{
     ViewData["Title"] = "ChiTiet";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 
 
 <!--================Single Product Area =================-->
@@ -10,22 +13,24 @@
     <div class="container">
         <div class="row s_product_inner">
             <div class="col-lg-6">
+                @*@foreach (var n in ViewBag.item)
+        {
+            <div class="owl-carousel owl-theme s_Product_carousel">
+                <div class="single-prd-item">
+                    <img src="@n.Url" alt="">
+                </div>
+            </div>
+        }*@
                 <div class="owl-carousel owl-theme s_Product_carousel">
                     <div class="single-prd-item">
-                        <img class="img-fluid" src="~/lib/img/category/s-p1.jpg" alt="">
+                        <img src="/admin/img/product/11111.png" alt="">
                     </div>
-                    <!-- <div class="single-prd-item">
-                        <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-                    </div>
-                    <div class="single-prd-item">
-                        <img class="img-fluid" src="img/category/s-p1.jpg" alt="">
-                    </div> -->
                 </div>
             </div>
             <div class="col-lg-5 offset-lg-1">
                 <div class="s_product_text">
-                    <h3>Faded SkyBlu Denim Jeans</h3>
-                    <h2>$149.99</h2>
+                    <h3>@Model.Name</h3>
+                    <h2>@Model.PriceOut</h2>
                     <ul class="list">
                         <li><a class="active" href="#"><span>Category</span> : Household</a></li>
                         <li><a href="#"><span>Availibility</span> : In Stock</a></li>
@@ -38,12 +43,10 @@
                     <div class="product_count">
                         <label for="qty">Quantity:</label>
                         <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
-                                class="increase items-count" type="button">
-                        </button>
+                                class="increase items-count" type="button"></button>
                         <input type="text" name="qty" id="sst" size="2" maxlength="12" value="1" title="Quantity:" class="input-text qty">
                         <button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
-                                class="reduced items-count" type="button">
-                        </button>
+                                class="reduced items-count" type="button"></button>
                         <a class="button primary-btn" href="#">Add to Cart</a>
                     </div>
                     <div class="card_area d-flex align-items-center">

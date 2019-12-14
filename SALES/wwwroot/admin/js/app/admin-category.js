@@ -31,6 +31,7 @@ $(document).on('click', '#btnAdd', function () {
         success: function (response) {
             $("#addModal").modal("hide");
             GetAll();
+            Notify("Lưu dữ liệu thành công", "success");
         },
         error: function (xhr, textStatus, errorThrown) {
             // TODO: Show error
@@ -63,6 +64,7 @@ $(document).on('click', '#btnDelete', function () {
         success: function (response) {
             $("#addModal").modal("hide");
             GetAll();
+            Notify("Xóa dữ liệu thành công", "success");
         },
         error: function (xhr, textStatus, errorThrown) {
             // TODO: Show error
@@ -77,3 +79,17 @@ $(document).on('click', '#btnShowModalAdd', function () {
     document.getElementById("chkIsActive").checked = false;
     $('#txtDescription').val('');
 });
+
+function Notify(message, type) {
+    $.notify({
+        icon: 'glyphicon glyphicon-bell',
+        message: message
+    }, {
+            type: type,
+            template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0}" role="alert">' +
+                '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                '<span data-notify="icon"></span> ' +
+                '<span data-notify="message">{2}</span>' +
+                '</div>'
+        });
+}

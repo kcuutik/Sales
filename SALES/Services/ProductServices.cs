@@ -12,8 +12,11 @@ namespace SALES.Services
         Task<List<Product>> GetAll();
         Task<List<Product>> GetIsActive();
         Task<Product> GetById(int id);
+        Task<List<Product>> GetProductByCategory(int id);
+        Task<List<Product>> GetIsTrend();
         Task<Product> Insert(Product pro);
         Task<Product> Update(Product pro);
+        Task<Product> UpdateImages(int id, string url);
         Task<Product> Delete(int id);
     }
     public class ProductServices : IProductServices
@@ -48,14 +51,29 @@ namespace SALES.Services
         {
             return _productRepository.Update(pro);
         }
-        public Task<Product> Delete(int id)
+        public async Task<Product> Delete(int id)
         {
-            throw new NotImplementedException();
+            return await _productRepository.Delete(id);
         }
 
         public Task<List<Product>> GetIsActive()
         {
             return _productRepository.GetIsActive();
+        }
+
+        public async Task<Product> UpdateImages(int id, string url)
+        {
+            return await _productRepository.UpdateImages(id, url);
+        }
+
+        public async Task<List<Product>> GetProductByCategory(int id)
+        {
+            return await _productRepository.GetProductByCategory(id);
+        }
+
+        public async Task<List<Product>> GetIsTrend()
+        {
+            return await _productRepository.GetIsTrend();
         }
     }
 }

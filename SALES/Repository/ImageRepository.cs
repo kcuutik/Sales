@@ -12,6 +12,8 @@ namespace SALES.Repository
     {
         Task<List<Image>> GetAll();
         Task<Image> GetById(int id);
+        Task<List<Image>> GetByIdProduct(int id);
+        
         Task<Image> Insert(Image ca);
         Task<Image> Update(Image ca);
         Task<Image> Delete(int id);
@@ -60,6 +62,7 @@ namespace SALES.Repository
             _dbContext.SaveChanges();
             return ca;
         }
+
         public async Task<Image> Delete(int id)
         {
             var img = await _dbContext.Images.FirstOrDefaultAsync(x => x.Id == id);
@@ -68,6 +71,12 @@ namespace SALES.Repository
                 _dbContext.Remove(img);
                 _dbContext.SaveChanges();
             }
+            return img;
+        }
+
+        public async Task<List<Image>> GetByIdProduct(int id)
+        {
+            var img = await _dbContext.Images.Where(x => x.ProductId == id).ToListAsync();
             return img;
         }
     }

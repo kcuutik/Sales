@@ -12,9 +12,13 @@ namespace SALES.Repository
     {
         Task<List<Product>> GetAll();
         Task<List<Product>> GetIsActive();
+        Task<List<Product>> GetIsTrend();
+        Task<List<Product>> GetProductByCategory(int id);
+        
         Task<Product> GetById(int id);
         Task<Product> Insert(Product pro);
         Task<Product> Update(Product pro);
+        Task<Product> UpdateImages(int id, string url);
         Task<Product> Delete(int id);
     }
     public class ProductRepository : IProductRepository
@@ -77,7 +81,7 @@ namespace SALES.Repository
         }
         public async Task<Product> Delete(int id)
         {
-            var pro = _dbContext.Products.FirstOrDefault(x => x.Id == id);
+            var pro = await _dbContext.Products.FirstOrDefaultAsync(x => x.Id == id);
             if (pro != null)
             {
                 _dbContext.Products.Remove(pro);
@@ -89,7 +93,32 @@ namespace SALES.Repository
 
         public async Task<List<Product>> GetIsActive()
         {
-            return await _dbContext.Products.Where(x => x.IsActive == true).ToListAsync(); 
+            return await _dbContext.Products.Where(x => x.IsActive == true).ToListAsync();
+        }
+
+        public async Task<Product> UpdateImages(int id, string url)
+        {
+            try
+            {
+                var img = _dbContext.Products.FirstOrDefault(x => x.Id == id);
+                if (img == null)
+                    return new Product(); 
+                img.Url = url;
+                _dbContext.SaveChanges();
+                return img;
+            }
+            catch (Exception ex) { return new Product(); }
+
+        }
+
+        public async Task<List<Product>> GetProductByCategory(int id)
+        {
+            return await _dbContext.Products.Where(x=>x.CategoryId == id).ToListAsync();
+        }
+
+        public async Task<List<Product>> GetIsTrend()
+        {
+            return await _dbContext.Products.Where(x => x.IsTrend == true).ToListAsync();
         }
     }
 }

@@ -11,10 +11,12 @@ namespace WEBAPP.Controllers
     [Route("san-pham")]
     public class ProductController : Controller
     {
+        private readonly IImageServices _imageServices;
         private readonly IProductServices _productServices;
-        public ProductController(IProductServices productServices)
+        public ProductController(IProductServices productServices, IImageServices imageServices)
         {
             _productServices = productServices;
+            _imageServices = imageServices;
         }
         [HttpGet("danh-muc")]
         public IActionResult Index()
@@ -22,24 +24,21 @@ namespace WEBAPP.Controllers
             return View();
         }
 
-        [HttpGet("chi-tiet/{id}")]
-        public IActionResult Detail(int id)
+        [HttpGet("chi-tiet/{id}/{title}")]
+        public async Task<IActionResult> Detail(int id, string title="")
         {
-            return View();
+            var item = await _imageServices.GetByIdProduct(id);
+            ViewBag.item = item;
+            var result = _productServices.GetById(id);
+            return View(result.Result);
         }
 
-        [HttpGet("getIsActive")]
-        public async Task<ActionResult> GetIsActive()
+        [HttpGet("loai-san-pham/{id}")]
+        public async Task<ActionResult> GetCategory(int id)
         {
-            var pro = await _productServices.GetIsActive();
-            return PartialView("_List", pro);
+            var pro = await _productServices.GetProductByCategory(id);
+            return View(pro);
         }
 
-        [HttpGet("getById")]
-        public async Task<ActionResult> GetById(int id)
-        {
-            var pro = await _productServices.GetById(id);
-            return PartialView("_Detail", pro);
-        }
     }
 }

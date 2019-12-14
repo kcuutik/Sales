@@ -16,6 +16,8 @@ namespace SALES.Entities
         public int Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("Url")]
+        public string Url { get; set; }
         [JsonProperty("categoryId")]
         public int CategoryId { get; set; }
         [JsonProperty("priceIn")]
@@ -38,7 +40,7 @@ namespace SALES.Entities
         public string Keywords { get; set; }
         [JsonProperty("isActive")]
         public bool IsActive { get; set; }
-
+        public bool IsTrend { get; set; }
         public DateTime CreateDate { get; set; }
         public DateTime UpdateDate { get; set; }
         public int CreateUser { get; set; }

@@ -32,6 +32,31 @@
 </div>
 
 
+<!-- Modal add -->
+<div class="modal fade" id="addImgModal" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Hình sản phẩm</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="hidProductId" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="file" id="FileUpload1" class="form-file-upload" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm pull-right" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary btn-sm pull-right" id="btnAddImgProduct">Lưu</button>
+            </div>
+        </div>
 
+    </div>
+</div>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <script src="~/admin/js/app/admin-product.js"></script>
-

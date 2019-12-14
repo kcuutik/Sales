@@ -11,6 +11,7 @@ namespace SALES.Services
     {
         Task<List<Image>> GetAll();
         Task<Image> GetById(int id);
+        Task<List<Image>> GetByIdProduct(int id);
         Task<Image> Insert(Image img);
         Task<Image> Update(Image img);
         Task<Image> Delete(int id);
@@ -48,5 +49,10 @@ namespace SALES.Services
             return await _imageRepository.Delete(id);
         }
 
+        public async Task<List<Image>> GetByIdProduct(int id)
+        {
+            var item = await _imageRepository.GetByIdProduct(id);
+           return await _imageRepository.GetByIdProduct(id);
+        }
     }
 }
