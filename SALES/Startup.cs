@@ -56,7 +56,6 @@ namespace SALES
             services.AddTransient<IAkUserServices, AkUserServices>();
             services.AddTransient<IAkUserRepository, AkUserRepository>();
 
-
             services.AddOptions();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);

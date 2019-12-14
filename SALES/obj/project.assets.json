@@ -12696,11 +12696,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\khoai\\Downloads\\SALES\\SALES\\SALES.csproj",
+      "projectUniqueName": "C:\\Users\\khoai\\OneDrive\\Máy tính\\ThuocLaThom\\Sales\\SALES\\SALES.csproj",
       "projectName": "SALES",
-      "projectPath": "C:\\Users\\khoai\\Downloads\\SALES\\SALES\\SALES.csproj",
+      "projectPath": "C:\\Users\\khoai\\OneDrive\\Máy tính\\ThuocLaThom\\Sales\\SALES\\SALES.csproj",
       "packagesPath": "C:\\Users\\khoai\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\khoai\\Downloads\\SALES\\SALES\\obj\\",
+      "outputPath": "C:\\Users\\khoai\\OneDrive\\Máy tính\\ThuocLaThom\\Sales\\SALES\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\khoai\\AppData\\Roaming\\NuGet\\NuGet.Config",
